@@ -1,0 +1,7 @@
+neural/
+.idea/
+data/
+__pycache__/
+dataset.py
+model/knowledge_density.keras
+.DS_Store
