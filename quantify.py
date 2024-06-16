@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 # Load the model
-loaded_model = load_model('model/knowledge_density.keras')
+loaded_model = load_model('./model/knowledge_density.keras')
 
 # Load the tokenizer
 with open('model/tokenizer.pkl', 'rb') as file:
