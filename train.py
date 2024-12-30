@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -42,6 +44,8 @@ model.compile(optimizer="adam", loss='mean_squared_error', metrics=['mae'])
 print("BEGINNING TRAINING")
 history = model.fit(X_train, np.array(y_train), epochs=60, batch_size=8, validation_data=(X_val, np.array(y_val)))
 
+
+os.makedirs(os.path.dirname('model/knowledge_density.keras'), exist_ok=True)
 model.save('model/knowledge_density.keras')
 with open('model/tokenizer.pkl', 'wb') as file:
     pickle.dump(tokenizer, file)

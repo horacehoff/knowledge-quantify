@@ -1,13 +1,13 @@
 # KnowledgeQuantify
 #### An experimental machine learning model to quantify the 'knowledge density' of a given text, that is how much raw knowledge/information related to a topic is contained in a given text.
-Please note that the dataset used to train this model is not included in this repository.
-
 The model can be downloaded in the "Releases" page.
 
 ## Installation
 ```bash
-git clone https://github.com/just-a-mango/knowledge-quantify
+# Install the required dependencies
 pip install tensorflow scikit-learn numpy
+# Clone the repository
+git clone https://github.com/just-a-mango/knowledge-quantify
 ```
 ## Contributing
 Contributions are more than welcome, as this needs to be a community project. Please fork the repository and submit a pull request with your proposed changes.
