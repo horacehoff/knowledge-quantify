@@ -1,7 +1,8 @@
+import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 from tensorflow.keras.models import load_model
 import pickle
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-
 
 # Load the model
 loaded_model = load_model('./model/knowledge_density.keras')
@@ -13,7 +14,7 @@ with open('model/tokenizer.pkl', 'rb') as file:
 
 def quantify(text):
     new_seq = loaded_tokenizer.texts_to_sequences([text])
-    new_data = pad_sequences(new_seq, maxlen=100)
+    new_data = pad_sequences(new_seq, maxlen=1000)
     prediction = loaded_model.predict(new_data, verbose=0)
     predicted = prediction[0][0]
     if predicted < 0:
@@ -21,3 +22,5 @@ def quantify(text):
     if predicted > 100:
         predicted = 100
     return predicted
+
+print(quantify("The speed of light is 3km/s."))
